@@ -14,8 +14,19 @@ api = tweepy.API(auth)
 
 class CustomStreamListener(tweepy.StreamListener):
     def on_status(self, status):
-            file.write(str(status)+"\n")
-            print (status.text)
+            if(status._json['lang']=='en'):
+                if not status._json['retweeted'] and 'RT @' not in status._json['text']:
+                    #Checking if the tweet is in english
+                    print(len(status.text))
+                    try:
+                        print(status._json['extended_tweet']['full_text'])
+                        file.write(status._json['extended_tweet']['full_text'].replace('\n',' ').strip()+"::::::\n")
+                    except:
+                        print(status.text)
+                        file.write(status.text.replace('\n','\t').strip()+"::::::\n")
+
+                    data.write(str(status._json) + "\n")
+
 
 
     def on_error(self, status_code):
@@ -27,6 +38,9 @@ class CustomStreamListener(tweepy.StreamListener):
         return True # Don't kill the stream
 
 
-file = open("tweets.txt", "a+")
+data = open("data.json", "w+")
+file = open("tweets.txt", "w+")
+
 sapi = tweepy.streaming.Stream(auth, CustomStreamListener())
-sapi.filter(locations=[-96.987075,32.625289,-96.562834,33.015838])
+#keywords on which we will filter
+sapi.filter(track=['accident','road','highway'])
