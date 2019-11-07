@@ -14,3 +14,4 @@ Based on the each tweet's contents.
 ## Rules for Labeling: Accidental (1) vs Non-Accidental Tweets (0)
 
 
+#### I am hoping that we would be able to get done with the labeling thing by Sunday the 10th
