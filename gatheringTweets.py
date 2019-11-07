@@ -38,8 +38,8 @@ class CustomStreamListener(tweepy.StreamListener):
         return True # Don't kill the stream
 
 
-data = open("data.json", "w+")
-file = open("tweets.txt", "w+")
+data = open("data.json", "a+")
+file = open("tweets.txt", "a+")
 
 sapi = tweepy.streaming.Stream(auth, CustomStreamListener())
 #keywords on which we will filter
