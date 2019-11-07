@@ -1,9 +1,16 @@
 # Social-Media-Data-Analysis-for-Accident-Reports
-This project collects social media data (from Twitter) and analyze it to retrieve any roadside traffic accident related information (like the location of incident, severity, type of injuries, etc) in realtime. Python, Spark, Apache Kafka.
+Each .txt is named in following format: tweetDataset_YOURNAME.txt
+In order to avoid confusion, please make sure you only download and start labelling the .txt file which has your name on it.
 
-Please do add your API keys in apiKeys.py
+## File structure
+Each line in the file, represents a single tweet.
+Each line looks like :   tweet::::::
+After labelling each line should look like 
+1) tweet::::::1 OR 2) tweet::::::0 
+Based on the each tweet content.
+## 1 is the class label for Accidental Tweets
+## 0 is the class label for Non-Accidental Tweets 
 
-It will create a append only tweets.txt which will store the tweets.
+## Rules for Labeling: Accidental (1) vs Non-Accidental Tweets (0)
 
-You can run it by:
-python gatheringTweets.py
+
