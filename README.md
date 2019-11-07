@@ -13,5 +13,10 @@ Based on the each tweet's contents.
 
 ## Rules for Labeling: Accidental (1) vs Non-Accidental Tweets (0)
 
+## After you are done with Labelling
+Make, sure you have been added as a Collaborator to the github repo,
+Then, go to the dataset branch, from were you got your txt file.
+And then click on "Upload files" and upload your labelled tweet txt file, make sure you don't change the name of the txt file, so that it will automatically, update the old unlabled txt file to the new labeled txt file. 
+
 
 #### I am hoping that we would be able to get done with the labeling thing by Sunday the 10th
