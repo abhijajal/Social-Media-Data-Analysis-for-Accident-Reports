@@ -23,7 +23,7 @@ class CustomStreamListener(tweepy.StreamListener):
                         file.write(status._json['extended_tweet']['full_text'].replace('\n',' ').strip()+"::::::\n")
                     except:
                         print(status.text)
-                        file.write(status.text.replace('\n','\t').strip()+"::::::\n")
+                        file.write(status.text.replace('\n',' ').strip()+"::::::\n")
 
                     data.write(str(status._json) + "\n")
 
@@ -43,4 +43,4 @@ file = open("tweets.txt", "a+")
 
 sapi = tweepy.streaming.Stream(auth, CustomStreamListener())
 #keywords on which we will filter
-sapi.filter(track=['accident','road','highway'])
+sapi.filter(track=['accident','road','highway','crash','collision','injur','kill','interstate','turnpike','tollway','i-635','i-35','i-30','i-45','sam rayburn','car'])
