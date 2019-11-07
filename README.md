@@ -8,8 +8,8 @@ Each line looks like :   tweet::::::
 After labelling each line should look like 
 1) tweet::::::1 OR 2) tweet::::::0 
 Based on the each tweet's contents.
-### 1 is the class label for Accidental Tweets
-### 0 is the class label for Non-Accidental Tweets 
+#### 1 is the class label for Accidental Tweets
+#### 0 is the class label for Non-Accidental Tweets 
 
 ## Rules for Labeling: Accidental (1) vs Non-Accidental Tweets (0)
 
