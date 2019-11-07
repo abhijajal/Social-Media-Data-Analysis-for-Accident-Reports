@@ -13,6 +13,9 @@ Based on the each tweet's contents.
 
 ## Rules for Labeling: Accidental (1) vs Non-Accidental Tweets (0)
 
+Even after these your are still confused, if this particular tweet is an accidental tweet or not...
+Copy paste the tweet, in grroup me group, and we all will discuss about it.
+
 ## After you are done with Labelling
 Make, sure you have been added as a Collaborator to the github repo,
 Then, go to the dataset branch, from were you got your txt file.
