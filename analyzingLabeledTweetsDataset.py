@@ -1,15 +1,16 @@
 i=1
-file = open("labeledTweetDataset.txt",'r')
+file = open("finalDataset.txt",'r')
 lines = file.readlines()
 positiveExamples = 0
 negativeExamples = 0
 for eachLine in lines:
-    if(eachLine.find("::::::1") >= 0):
+    label = eachLine[len(eachLine)-2:]
+    if(label == "1\n"):
         positiveExamples = positiveExamples + 1
-    elif (eachLine.find("::::::0") >= 0):
+    elif (label == "0\n"):
         negativeExamples = negativeExamples + 1
-
     else:
+        print(label)
         print(i)
     i = i + 1
 
