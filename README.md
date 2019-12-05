@@ -17,7 +17,8 @@ After running this, two folders would be created for storing models.
 ## For Streaming 
 
 Open the terminal and run zookeeper, Kafka Server and create a topic named "twitter"
-Run "twitter_producer.py"
+Run "twitter_producer_location.py"
+Run "twitter_producer_keyword.py"
 Run "twitter_consumer.py"
 
 ## Visualization
