@@ -29,6 +29,15 @@ def num_patterns(txt):
 		span = doc[start:end]
 		print(span.text)
 
+	matcher2 = Matcher(nlp.vocab)
+	matcher2.add("matching", None, [{'POS': 'NUM'}, {'POS': 'VERB'}], [{'POS': 'NUM'}, {'POS': 'NOUN'}])
+
+	matches = matcher(doc)
+	span = ""
+	for match_id, start, end in matches:
+		span = doc[start:end]
+		print(span.text)
+
 
 newPositiveDataSetFile = open("positiveDataset.txt", 'r+')
 

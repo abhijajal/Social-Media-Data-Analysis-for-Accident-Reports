@@ -36,24 +36,6 @@ class CustomStreamListener(tweepy.StreamListener):
     count = 1
     def on_status(self, status):
             if(status._json['lang']=='en'):#Checking if the tweet is in english
-                print(self.count)
-                try:
-                    tweet= status._json['extended_tweet']['full_text'].replace('\n',' ').strip()+"::::::"+status._json['created_at']
-                except:
-                    tweet=status.text.replace('\n',' ').strip()+"::::::"+status._json['created_at']
-
-                prod = connect_kafka_producer();
-
-                print(json.dumps(tweet))
-                publish_message(prod, 'twitter', tweet)
-
-                if prod is not None:
-                    prod.close()
-                self.count=self.count+1
-                file.write(tweet+"\n")
-                data.write(str(status._json) + "\n")
-                sleep(10)
-
                 if not status._json['retweeted'] and 'RT @' not in status._json['text']:
                     #Checking if the tweet is in english
                     print(self.count)
@@ -72,15 +54,16 @@ class CustomStreamListener(tweepy.StreamListener):
                     self.count=self.count+1
                     file.write(tweet+"\n")
                     data.write(str(status._json) + "\n")
-                    sleep(10)
+                    #sleep(20)
+
 
 
     def on_error(self, status_code):
-        print >> sys.stderr, 'Encountered error with status code:', status_code
+        print( sys.stderr, 'Encountered error with status code:', status_code)
         return True # Don't kill the stream
 
     def on_timeout(self):
-        print >> sys.stderr, 'Timeout...'
+        print (sys.stderr, 'Timeout...')
         return True # Don't kill the stream
 
 

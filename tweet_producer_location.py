@@ -7,7 +7,7 @@ import requests
 import time
 import tweepy
 import sys
-import apiKeys
+import apiKeys2
 
 def publish_message(producer_instance, topic_name, value):
     try:
@@ -54,7 +54,7 @@ class CustomStreamListener(tweepy.StreamListener):
                     self.count=self.count+1
                     file.write(tweet+"\n")
                     data.write(str(status._json) + "\n")
-                    sleep(10)
+                    #sleep(20)
 
 
     def on_error(self, status_code):
@@ -73,10 +73,10 @@ if __name__== "__main__":
         print ('Number of arguments is not correct')
         exit()
 
-    consumer_key = apiKeys.consumer_key
-    consumer_secret = apiKeys.consumer_secret
-    access_key = apiKeys.access_key
-    access_secret = apiKeys.access_secret
+    consumer_key = apiKeys2.consumer_key
+    consumer_secret = apiKeys2.consumer_secret
+    access_key = apiKeys2.access_key
+    access_secret = apiKeys2.access_secret
 
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
     auth.set_access_token(access_key, access_secret)
